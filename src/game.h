@@ -2,10 +2,11 @@
 #define GAME_H
 
 #include <random>
-#include "SDL.h"
+// #include "SDL.h"
 #include "controller.h"
 #include "renderer.h"
 #include "snake.h"
+#include "food.h"
 
 class Game {
  public:
@@ -16,8 +17,13 @@ class Game {
   int GetSize() const;
 
  private:
+
   Snake snake;
-  SDL_Point food;
+
+  Food right_food;
+  std::vector<Food> wrong_foods;
+
+  bool running{false};
 
   std::random_device dev;
   std::mt19937 engine;
@@ -26,8 +32,15 @@ class Game {
 
   int score{0};
 
-  void PlaceFood();
   void Update();
+
+  // When snake dies refresh food placements
+  void RefreshFoods();
+
+  // boolean trigger for RefreshFoods() function
+  bool refresh{false};
+
+
 };
 
 #endif
