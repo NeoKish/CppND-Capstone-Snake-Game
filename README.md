@@ -39,6 +39,8 @@ In this project, you can build your own C++ application or extend this Snake gam
 
 3. At the end of the game when all lives are lost, a dialog msg appears which allows you to restart the game if you want to continue the game. 
 
+<img src="modified_snake_game.gif"/>
+
 ## Rubric points addressed
 
 1. The project demonstrates an understanding of C++ functions and control structures.
